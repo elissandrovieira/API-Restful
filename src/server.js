@@ -9,8 +9,8 @@ const app = express()
 //database conection
 db.connect()
 
-//enable server to receive data by post (form)
-app.use(express.urlencoded({ extended: true }))
+//enable server to receive json data
+app.use(express.json())
 
 //set routes
 app.use('/api', routes)
