@@ -1,5 +1,5 @@
 const express = require('express')
-const path = require('path')
+const cors = require('cors')
 
 const db = require('./database/db')
 const routes = require('./routes/routes')
@@ -8,6 +8,9 @@ const app = express()
 
 //database conection
 db.connect()
+
+//enable CORS
+app.use(cors())
 
 //enable server to receive json data
 app.use(express.json())
